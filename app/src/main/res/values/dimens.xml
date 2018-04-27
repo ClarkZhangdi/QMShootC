@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--ui单位为px-->
+    <dimen name="ui_font_10">10sp</dimen>
+    <dimen name="ui_font_11">11sp</dimen>
+    <dimen name="ui_font_12">12sp</dimen>
+    <dimen name="ui_font_14">14sp</dimen>
+    <dimen name="ui_font_16">16sp</dimen>
+    <dimen name="ui_font_18">18sp</dimen>
+    <dimen name="ui_font_20">20sp</dimen>
+    <dimen name="ui_font_22">22sp</dimen>
+    <dimen name="ui_font_24">24sp</dimen>
+    <dimen name="ui_font_26">26sp</dimen>
+    <dimen name="ui_font_28">28sp</dimen>
+    <dimen name="ui_font_30">30sp</dimen>
+    <dimen name="ui_font_32">32sp</dimen>
+    <dimen name="ui_font_34">34sp</dimen>
+    <dimen name="ui_font_36">36sp</dimen>
+    <dimen name="ui_font_38">38sp</dimen>
+    <dimen name="ui_font_40">40sp</dimen>
+    <dimen name="ui_font_48">48sp</dimen>
+    <dimen name="ui_font_56">56sp</dimen>
+    <dimen name="ui_font_72">72sp</dimen>
+    <dimen name="ui_font_80">80sp</dimen>
+    <dimen name="title_bar_title_tx_size">18sp</dimen>
+
+</resources>
