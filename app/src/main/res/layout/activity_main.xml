@@ -1,18 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".modules.main.MainActivity">
+    android:background="@color/colorButtonBackground"
+    tools:context=".modules.main.components.MainActivity">
+    <!--recycler view 多布局-->
+    <com.amiba.frame.androidframe.ui.pulltorefresh.library.PullToRefreshRecyclerView
+        android:id="@+id/id_refresh_recycler_view_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+    </com.amiba.frame.androidframe.ui.pulltorefresh.library.PullToRefreshRecyclerView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y220"
+        android:scaleType="fitXY"
+        android:src="@drawable/b01" />
+
+    <!--定义顶部状态栏-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y44"
+        android:layout_marginTop="@dimen/y25"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/y32"
+            android:layout_marginLeft="@dimen/x16"
+            android:layout_weight="1"
+            android:background="@drawable/shape_oval"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/x13"
+                    android:layout_height="@dimen/y14"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_sousuo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/y20"
+                    android:layout_marginLeft="@dimen/x4"
+                    android:hint="搜索关键词"
+                    android:textColorHint="@color/colorButtonBackground"
+                    android:textSize="@dimen/ui_font_14_no" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/x32"
+            android:layout_height="@dimen/y32"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginRight="@dimen/x16"
+            android:background="@drawable/shape_oval"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/x20"
+                android:layout_height="@dimen/y20"
+
+                android:background="@drawable/shape_oval"
+                android:src="@drawable/icon_saoyisao" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y49"
+        android:layout_alignParentBottom="true"
+        android:background="#CCF0FFFF">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x18">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="首页"
+                android:textColor="@color/colorMain"
+                android:textSize="@dimen/ui_font_16_no" />
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y3"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorMain"></ImageView>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x90">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="发现"
+                android:textColor="@color/colorMain"
+                android:textSize="@dimen/ui_font_16_no" />
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y3"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorMain"></ImageView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/x18">
+
+            <RelativeLayout
+                android:layout_width="@dimen/x48"
+                android:layout_height="@dimen/y32"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_oval_main_color"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/x12"
+                    android:layout_height="@dimen/y12"
+                    android:src="@drawable/icon_fabu"
+                    android:textColor="@color/colorMain"
+                    android:textSize="@dimen/ui_font_16_no" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x88">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="消息"
+                android:textColor="@color/colorMain"
+                android:textSize="@dimen/ui_font_16_no" />
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y3"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorMain"></ImageView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x18">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="我的"
+                android:textColor="@color/colorMain"
+                android:textSize="@dimen/ui_font_16_no" />
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y3"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorMain"></ImageView>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

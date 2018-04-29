@@ -1,4 +1,4 @@
-package com.clark.qmshootc.modules.guide.Views;
+package com.clark.qmshootc.modules.guide.views;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,9 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.amiba.frame.androidframe.base.BaseFragment;
 import com.clark.qmshootc.R;
-import com.clark.qmshootc.modules.guide.Views.presenters.IFragmentPresenter;
-import com.clark.qmshootc.modules.guide.Views.presenters.impls.FragmentPresenter;
+import com.clark.qmshootc.modules.guide.views.presenters.IFragmentPresenter;
+import com.clark.qmshootc.modules.guide.views.presenters.impls.FragmentPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,7 +25,7 @@ import butterknife.Unbinder;
  * 这时候只需要关注FragmentPresenter即可,而我们想在activity中和IFragmentPresenter交互,只需要在IFragmentPresenter
  * 定义对应的交互方法即可
  */
-public class FragmentView extends Fragment implements IFragmentPresenter.View {
+public class FragmentView extends BaseFragment implements IFragmentPresenter.View {
 
     Unbinder unbinder;
     @BindView(R.id.id_btn_skip)

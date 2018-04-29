@@ -10,8 +10,24 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+
+    enum A {
+        haha(0), hehe(1);
+
+        public int getI() {
+            return i;
+        }
+
+        private int i;
+
+        A(int i) {
+            this.i = i;
+        }
+    }
+
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        System.out.println(A.haha.getI());
+        System.out.println(A.hehe.getI());
     }
 }

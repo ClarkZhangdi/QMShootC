@@ -3,4 +3,17 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--全民摄影App标准色-->
+    <color name="colorMain">#32C27C</color>
+    <color name="colorSupport">#FFFFB317</color>
+    <color name="colorVigilant">#FF5B42</color>
+    <color name="colorTitle">#333333</color>
+    <color name="colorImportantText">#666666</color>
+    <color name="colorSupportText">#999999</color>
+    <color name="colorNotFiled">#CCCCCC</color>
+    <color name="colorPartButton">#FFFFFFFF</color>
+    <color name="colorButtonBackground">#FFFFFFFF</color>
+    <color name="colorDivideLine">#EAEAEA</color>
+    <color name="colorBackground">#FFF7F9FA</color>
 </resources>

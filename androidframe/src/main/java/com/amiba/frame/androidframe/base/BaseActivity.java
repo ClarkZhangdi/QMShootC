@@ -25,6 +25,8 @@ import com.amiba.frame.androidframe.R;
 import com.amiba.frame.androidframe.util.ResourceUtils;
 import com.amiba.frame.androidframe.util.log.DebugLog;
 
+import butterknife.ButterKnife;
+
 /**
  * com.amiba.frame.androidframe.base
  * Created by wudl on 17/9/20.
@@ -44,6 +46,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResId());//把设置布局文件的操作交给继承的子类
+//        绑定当前Activity
+        ButterKnife.bind(this);
         activityManager = MyActivityManager.getMyActivityManager();
         activityManager.pushActivity(this);
         ViewGroup contentFrameLayout = findViewById(Window.ID_ANDROID_CONTENT);

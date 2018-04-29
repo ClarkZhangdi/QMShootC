@@ -47,9 +47,17 @@ public class OkHttpUtils {
     public static final MediaType TEXT_XML
             = MediaType.parse("text/xml");
 
+    /**
+     * 修改代码
+     * okHttpClient = new OkHttpClient();
+     * 为
+     * mOkHttpClient = new OkHttpClient();
+     *
+     * @param okHttpClient
+     */
     public OkHttpUtils(OkHttpClient okHttpClient) {
         if (okHttpClient == null) {
-            okHttpClient = new OkHttpClient();
+            mOkHttpClient = new OkHttpClient();
         } else {
             mOkHttpClient = okHttpClient;
         }

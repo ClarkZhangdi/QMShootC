@@ -57,7 +57,6 @@ public class FullScreenUtils {
     }
 
 
-
     /**
      * 该方法只能在onWindowFocusChange方法中调用
      * 确认当前模式为全屏状态
@@ -96,6 +95,15 @@ public class FullScreenUtils {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
             activity.getWindow().setNavigationBarColor(Color.TRANSPARENT);
+        }
+    }
+
+
+    public static void setFitsSystem(AppCompatActivity activity) {
+        ViewGroup contentFrameLayout = activity.findViewById(Window.ID_ANDROID_CONTENT);
+        View parentView = contentFrameLayout.getChildAt(0);
+        if (parentView != null) {
+            parentView.setFitsSystemWindows(false);
         }
     }
 
