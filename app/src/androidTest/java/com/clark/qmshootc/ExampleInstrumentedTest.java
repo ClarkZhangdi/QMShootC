@@ -7,6 +7,9 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.Map;
+import java.util.Set;
+
 import static org.junit.Assert.*;
 
 /**
@@ -18,9 +21,18 @@ import static org.junit.Assert.*;
 public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
-
-        assertEquals("com.clark.qmshootc", appContext.getPackageName());
+        new Thread("hahaha").start();
+        Map<Thread, StackTraceElement[]> allStackTraces =
+                Thread.getAllStackTraces();
+        Set<Map.Entry<Thread, StackTraceElement[]>> entries = allStackTraces.entrySet();
+        for (Map.Entry<Thread, StackTraceElement[]> entry :
+                entries) {
+            Thread key = entry.getKey();
+            String name = key.getName();
+            System.out.println(name);
+            if (name.equals("hahaha")){
+                System.out.println("===============");
+            }
+        }
     }
 }

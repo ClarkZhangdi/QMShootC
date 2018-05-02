@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -8,106 +9,221 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/id_vp_banner"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="@dimen/y220" />
 
     <!--存放小圆点的容器-->
     <LinearLayout
+        android:layout_centerHorizontal="true"
         android:id="@+id/id_ll_point_container"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/y7"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/y32"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/y178"
         android:orientation="horizontal" />
 
     <!--下方功能入口布局-->
     <android.support.constraint.ConstraintLayout
+        android:layout_marginBottom="@dimen/y10"
+        android:elevation="@dimen/y4"
         android:layout_width="@dimen/x343"
         android:layout_height="@dimen/y178"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/y196"
         android:background="@color/colorButtonBackground">
+
         <ImageView
             android:id="@+id/id_iv_find_shoot"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="@dimen/x40"
-            android:layout_height="@dimen/y40" />
+            android:layout_height="@dimen/y40"
+            android:layout_marginTop="@dimen/y15"
+            android:src="@drawable/icon_zhaosheying"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/id_iv_find_model"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/id_tv_find_shoot"
+
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y17"
+            android:layout_marginTop="@dimen/y4"
+            android:text="找摄影"
+            android:textColor="@color/colorImportantText"
+            android:textSize="@dimen/ui_font_11_no"
+            app:layout_constraintLeft_toLeftOf="@+id/id_iv_find_shoot"
+            app:layout_constraintRight_toRightOf="@+id/id_iv_find_shoot"
+            app:layout_constraintTop_toBottomOf="@+id/id_iv_find_shoot" />
 
         <ImageView
             android:id="@+id/id_iv_find_model"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="@dimen/x40"
-            android:layout_height="@dimen/y40" />
+            android:layout_height="@dimen/y40"
+            android:src="@drawable/icon_zhaomote"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toRightOf="@+id/id_iv_find_shoot"
+            app:layout_constraintRight_toLeftOf="@+id/id_iv_find_place"
+            app:layout_constraintTop_toTopOf="@+id/id_iv_find_shoot" />
+
+        <TextView
+            android:id="@+id/id_tv_find_model"
+
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y17"
+            android:layout_marginTop="@dimen/y4"
+            android:text="找模特"
+            android:textColor="@color/colorImportantText"
+            android:textSize="@dimen/ui_font_11_no"
+            app:layout_constraintLeft_toLeftOf="@+id/id_iv_find_model"
+            app:layout_constraintRight_toRightOf="@+id/id_iv_find_model"
+            app:layout_constraintTop_toBottomOf="@+id/id_iv_find_model" />
+
         <ImageView
             android:id="@+id/id_iv_find_place"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="@dimen/x40"
-            android:layout_height="@dimen/y40" />
+            android:layout_height="@dimen/y40"
+            android:src="@drawable/icon_zhaochangdi"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toRightOf="@+id/id_iv_find_model"
+            app:layout_constraintRight_toLeftOf="@+id/id_iv_find_dresser"
+            app:layout_constraintTop_toTopOf="@+id/id_iv_find_shoot" />
+
+
+        <TextView
+            android:id="@+id/id_tv_find_place"
+
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y17"
+            android:layout_marginTop="@dimen/y4"
+            android:text="找场地"
+            android:textColor="@color/colorImportantText"
+            android:textSize="@dimen/ui_font_11_no"
+            app:layout_constraintLeft_toLeftOf="@+id/id_iv_find_place"
+            app:layout_constraintRight_toRightOf="@+id/id_iv_find_place"
+            app:layout_constraintTop_toBottomOf="@+id/id_iv_find_place" />
+
+
         <ImageView
             android:id="@+id/id_iv_find_dresser"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="@dimen/x40"
-            android:layout_height="@dimen/y40" />
+            android:layout_height="@dimen/y40"
+            android:src="@drawable/icon_zhaohuazhuang"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toRightOf="@+id/id_iv_find_place"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_iv_find_shoot" />
+
+
+        <TextView
+            android:id="@+id/id_tv_find_dresser"
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y17"
+            android:layout_marginTop="@dimen/y4"
+            android:text="找化妆"
+            android:textColor="@color/colorImportantText"
+            android:textSize="@dimen/ui_font_11_no"
+            app:layout_constraintLeft_toLeftOf="@+id/id_iv_find_dresser"
+            app:layout_constraintRight_toRightOf="@+id/id_iv_find_dresser"
+            app:layout_constraintTop_toBottomOf="@+id/id_iv_find_dresser" />
+
+
+        <!--第二列-->
+
+
+        <TextView
+            android:id="@+id/id_tv_find_wedding"
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y17"
+            android:layout_marginBottom="@dimen/y14"
+            android:layout_marginTop="@dimen/y4"
+            android:text="婚纱照"
+            android:textColor="@color/colorImportantText"
+            android:textSize="@dimen/ui_font_11_no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/id_tv_find_bill" />
+
+
         <ImageView
             android:id="@+id/id_iv_find_wedding"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="@dimen/x40"
-            android:layout_height="@dimen/y40" />
+            android:layout_height="@dimen/y40"
+            android:layout_marginBottom="@dimen/y4"
+            android:src="@drawable/icon_hunshazhao"
+            app:layout_constraintBottom_toTopOf="@+id/id_tv_find_wedding"
+            app:layout_constraintLeft_toLeftOf="@+id/id_tv_find_wedding"
+            app:layout_constraintRight_toRightOf="@+id/id_tv_find_wedding"
+            tools:layout_editor_absoluteY="97dp" />
+
+
+        <TextView
+            android:id="@+id/id_tv_find_bill"
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y17"
+            android:layout_marginTop="@dimen/y4"
+            android:text="找拼单"
+            android:textColor="@color/colorImportantText"
+            android:textSize="@dimen/ui_font_11_no"
+            app:layout_constraintBottom_toBottomOf="@+id/id_tv_find_wedding"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="@+id/id_tv_find_wedding"
+            app:layout_constraintRight_toRightOf="@+id/id_tv_find_college" />
+
         <ImageView
+
             android:id="@+id/id_iv_find_bill"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="@dimen/x40"
-            android:layout_height="@dimen/y40" />
+            android:layout_height="@dimen/y40"
+            android:src="@drawable/icon_zhaopindan"
+            app:layout_constraintLeft_toLeftOf="@+id/id_tv_find_bill"
+            app:layout_constraintRight_toRightOf="@+id/id_tv_find_bill"
+            app:layout_constraintTop_toTopOf="@+id/id_iv_find_wedding" />
+
+
+        <TextView
+            android:id="@+id/id_tv_find_college"
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y17"
+            android:layout_marginTop="@dimen/y4"
+            android:text="微学院"
+            android:textColor="@color/colorImportantText"
+            android:textSize="@dimen/ui_font_11_no"
+            app:layout_constraintBottom_toBottomOf="@+id/id_tv_find_wedding"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="@+id/id_tv_find_bill"
+            app:layout_constraintRight_toRightOf="@+id/id_tv_find_video" />
+
+
         <ImageView
             android:id="@+id/id_iv_find_college"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="@dimen/x40"
-            android:layout_height="@dimen/y40" />
+            android:layout_height="@dimen/y40"
+            android:src="@drawable/icon_weixueyuan"
+            app:layout_constraintLeft_toLeftOf="@+id/id_tv_find_college"
+            app:layout_constraintRight_toRightOf="@+id/id_tv_find_college"
+            app:layout_constraintTop_toTopOf="@+id/id_iv_find_wedding" />
+
+        <TextView
+            android:id="@+id/id_tv_find_video"
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y17"
+            android:layout_marginTop="@dimen/y4"
+            android:text="短视频"
+            android:textColor="@color/colorImportantText"
+            android:textSize="@dimen/ui_font_11_no"
+            app:layout_constraintBottom_toBottomOf="@+id/id_tv_find_wedding"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toRightOf="@+id/id_tv_find_college"
+            app:layout_constraintRight_toRightOf="parent" />
+
         <ImageView
             android:id="@+id/id_iv_find_video"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="@dimen/x40"
-            android:layout_height="@dimen/y40" />
+            android:layout_height="@dimen/y40"
+            android:src="@drawable/icon_duanshipin"
+            app:layout_constraintLeft_toLeftOf="@+id/id_tv_find_video"
+            app:layout_constraintRight_toRightOf="@+id/id_tv_find_video"
+            app:layout_constraintTop_toTopOf="@+id/id_iv_find_wedding" />
 
 
     </android.support.constraint.ConstraintLayout>

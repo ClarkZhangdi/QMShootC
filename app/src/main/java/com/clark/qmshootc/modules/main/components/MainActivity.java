@@ -1,30 +1,38 @@
 package com.clark.qmshootc.modules.main.components;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.amiba.frame.androidframe.base.BaseActivity;
 import com.amiba.frame.androidframe.ui.pulltorefresh.library.PullToRefreshRecyclerView;
 import com.clark.qmshootc.R;
 import com.clark.qmshootc.common.utils.app.FullScreenUtils;
-import com.clark.qmshootc.modules.main.adapter.MainRecyclerViewAdapter;
 import com.clark.qmshootc.modules.main.presenter.IMainPresenter;
-
-import java.util.List;
-import java.util.Map;
+import com.clark.qmshootc.modules.main.presenter.impl.MainPresenter;
 
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity implements IMainPresenter.View {
     @BindView(R.id.id_refresh_recycler_view_main)
     PullToRefreshRecyclerView idRefreshRecyclerViewMain;
-    private RecyclerView recyclerView;
-    private List<String> picList;
-    private List<Map<String, Object>> channelList;
-    private List<Integer> girlList;
-    private List<String> normalList;
-    private MainRecyclerViewAdapter adapter;
-    private RecyclerView refreshableView;
+    @BindView(R.id.id_ll_title)
+    LinearLayout idLlTitle;
+    @BindView(R.id.id_iv_search)
+    ImageView idIvSearch;
+    @BindView(R.id.id_tv_search)
+    TextView idTvSearch;
+    @BindView(R.id.id_iv_QR_code)
+    ImageView idIvQRCode;
+    @BindView(R.id.id_rl_status_bg)
+    RelativeLayout idRlStatusBg;
+    private IMainPresenter mainPresenter;
 
 
     @Override
@@ -39,9 +47,11 @@ public class MainActivity extends BaseActivity implements IMainPresenter.View {
         FullScreenUtils.setFitsSystem(this);
 //        设置界面全屏模式/显示状态栏
         FullScreenUtils.FullScreen(this);
-//        初始化RecyclerView
-        initView();
+//        设置presenter
+        mainPresenter = new MainPresenter(this);
+
     }
+
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -50,10 +60,6 @@ public class MainActivity extends BaseActivity implements IMainPresenter.View {
     }
 
 
-    private void initView() {
-        refreshableView = idRefreshRecyclerViewMain.getRefreshableView();
-    }
-
     @Override
     public void setRecyclerViewData() {
 
@@ -61,7 +67,27 @@ public class MainActivity extends BaseActivity implements IMainPresenter.View {
 
     @Override
     public RecyclerView getRecyclerView() {
-        return refreshableView;
+        return idRefreshRecyclerViewMain.getRefreshableView();
+    }
+
+    @SuppressLint({"ResourceAsColor", "NewApi"})
+    @Override
+    public void setTitleBackGroundColor(@ColorInt int color,int dy) {
+        if (dy > 200) {
+            idRlStatusBg.setBackground(getDrawable(R.drawable.shape_oval_main_color));
+            idIvSearch.setImageResource(R.drawable.icon_sousuo2);
+            idTvSearch.setTextColor(Color.BLACK);
+            idTvSearch.setText("搜索关键词");
+            idIvQRCode.setImageResource(R.drawable.icon_saoyisao2);
+        } else {
+            idRlStatusBg.setBackground(getDrawable(R.drawable.shape_oval_white));
+            idIvSearch.setImageResource(R.drawable.icon_sousuo);
+            idTvSearch.setTextColor(Color.WHITE);
+            idTvSearch.setText("搜索关键词");
+            idIvQRCode.setImageResource(R.drawable.icon_saoyisao);
+        }
+        FullScreenUtils.SetStatusBarColor(this, color);
+        idLlTitle.setBackgroundColor(color);
     }
 
 

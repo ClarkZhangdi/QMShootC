@@ -10,19 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".modules.main.components.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity android:name=".modules.guide.components.SetupGuideActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".modules.login.components.LoginActivity"></activity>
+        <activity android:name=".modules.login.components.LoginActivity" />
+        <activity android:name=".TestKJActivity"></activity>
+        <activity android:name=".TestHScrollViewActivity"></activity>
+        <activity android:name=".TestBannerActivity">
 
-        <activity android:name=".TestKJActivity">
+
         </activity>
     </application>
 

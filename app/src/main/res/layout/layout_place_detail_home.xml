@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/x8">
+
+    <ImageView
+        android:id="@+id/id_iv_place"
+        android:layout_width="@dimen/x343"
+        android:layout_height="@dimen/y219"
+        android:layout_margin="@dimen/x8"
+        android:scaleType="fitXY"
+        android:src="@drawable/b01" />
+
+    <ImageView
+        android:id="@+id/id_rl_artist_type"
+        android:layout_width="@dimen/x24"
+        android:layout_height="@dimen/y24"
+        android:layout_marginBottom="@dimen/x17"
+        android:layout_marginLeft="@dimen/x17"
+        android:background="@drawable/shape_oval_black"
+        app:layout_constraintBottom_toBottomOf="@id/id_iv_place"
+        app:layout_constraintLeft_toLeftOf="@id/id_iv_place" />
+
+    <RelativeLayout
+        android:layout_width="@dimen/x68"
+        android:layout_height="@dimen/y24"
+        android:layout_marginLeft="@dimen/x23"
+        android:background="@drawable/image_bottom_color"
+        app:layout_constraintBottom_toBottomOf="@id/id_rl_artist_type"
+        app:layout_constraintLeft_toLeftOf="@+id/id_rl_artist_type"
+        app:layout_constraintTop_toTopOf="@id/id_rl_artist_type">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="韦德拍摄"
+            android:textColor="@color/colorButtonBackground"
+            android:textSize="@dimen/ui_font_11_no" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

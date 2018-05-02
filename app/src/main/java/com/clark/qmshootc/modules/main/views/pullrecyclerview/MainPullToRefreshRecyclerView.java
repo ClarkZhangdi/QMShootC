@@ -1,4 +1,4 @@
-package com.clark.qmshootc.modules.main.views;
+package com.clark.qmshootc.modules.main.views.pullrecyclerview;
 
 import android.content.Context;
 import android.util.AttributeSet;
