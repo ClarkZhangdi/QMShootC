@@ -7,6 +7,7 @@
     android:background="@color/colorButtonBackground"
     tools:context=".modules.main.components.MainActivity">
 
+    <!-- 下拉刷新RecyclerView -->
     <com.amiba.frame.androidframe.ui.pulltorefresh.library.PullToRefreshRecyclerView
         android:id="@+id/id_refresh_recycler_view_main"
         android:layout_width="match_parent"
@@ -20,78 +21,91 @@
     </com.amiba.frame.androidframe.ui.pulltorefresh.library.PullToRefreshRecyclerView>
 
     <!--定义顶部状态栏-->
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/id_ll_title"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y44"
         android:layout_marginTop="@dimen/y25"
-        android:gravity="center_vertical"
-        android:background="@color/white"
-        android:orientation="horizontal"
+        android:background="@color/transparent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:id="@+id/id_rl_status_bg"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/y32"
-            android:layout_marginLeft="@dimen/x16"
-            android:layout_weight="1"
-            android:background="@drawable/shape_oval"
-            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/id_iv_search"
-                    android:layout_width="@dimen/x13"
-                    android:layout_height="@dimen/y14"
-                    android:layout_gravity="center_vertical"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/icon_sousuo" />
-
-                <TextView
-                    android:id="@+id/id_tv_search"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/y20"
-                    android:layout_marginLeft="@dimen/x4"
-                    android:hint="搜索关键词"
-                    android:textColorHint="@color/colorButtonBackground"
-                    android:textSize="@dimen/ui_font_14_no" />
-            </LinearLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
+        <ImageView
+            android:id="@+id/id_iv_QR"
             android:layout_width="@dimen/x32"
             android:layout_height="@dimen/y32"
             android:layout_marginLeft="@dimen/x10"
-            android:layout_marginRight="@dimen/x16"
+            android:layout_marginRight="@dimen/x20"
             android:background="@drawable/shape_oval"
-            android:gravity="center">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/id_iv_status_bg"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/id_iv_QR_code"
-                android:layout_width="@dimen/x20"
-                android:layout_height="@dimen/y20"
-                android:background="@drawable/shape_oval"
-                android:src="@drawable/icon_saoyisao" />
-        </RelativeLayout>
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/id_iv_QR_code"
+            android:layout_width="@dimen/x20"
+            android:layout_height="@dimen/y20"
+            android:background="@drawable/shape_oval"
+            android:src="@drawable/icon_saoyisao"
+            app:layout_constraintBottom_toBottomOf="@+id/id_iv_QR"
+            app:layout_constraintLeft_toLeftOf="@+id/id_iv_QR"
+            app:layout_constraintRight_toRightOf="@+id/id_iv_QR"
+            app:layout_constraintTop_toTopOf="@+id/id_iv_QR" />
 
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/id_iv_status_bg"
+            android:layout_width="@dimen/x300"
+            android:layout_height="@dimen/y32"
+            android:layout_marginLeft="@dimen/x20"
+            android:background="@drawable/shape_oval"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/id_iv_QR"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        app:layout_constraintTop_toBottomOf="@+id/id_ll_title"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y2"
-        android:background="@color/colorDivideLine"
-        />
+
+        <ImageView
+            android:id="@+id/id_iv_search"
+            android:layout_width="@dimen/x13"
+            android:layout_height="@dimen/y14"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_sousuo"
+            app:layout_constraintBottom_toBottomOf="@+id/id_iv_status_bg"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="@+id/id_iv_status_bg"
+            app:layout_constraintRight_toLeftOf="@+id/id_tv_search"
+            app:layout_constraintTop_toTopOf="@+id/id_iv_status_bg" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/id_tv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x4"
+            android:textSize="@dimen/ui_font_14_no"
+            app:layout_constraintBottom_toBottomOf="@+id/id_iv_status_bg"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toRightOf="@+id/id_iv_search"
+            app:layout_constraintRight_toRightOf="@+id/id_iv_status_bg"
+            app:layout_constraintTop_toTopOf="@+id/id_iv_status_bg" />
+
+        <View
+            android:id="@+id/id_view_divide"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y1"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/y49"

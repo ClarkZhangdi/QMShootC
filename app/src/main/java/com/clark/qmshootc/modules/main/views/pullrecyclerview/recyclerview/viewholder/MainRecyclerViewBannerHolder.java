@@ -157,8 +157,11 @@ public class MainRecyclerViewBannerHolder extends RecyclerView.ViewHolder implem
             int newPosition = position % imageViewList.size();
 
             ImageView imageView = imageViewList.get(newPosition);
+            if (imageView.getParent() == null) {
+
+                container.addView(imageView);
+            }
             // a. 把View对象添加到container中
-            container.addView(imageView);
             // b. 把View对象返回给框架, 适配器
             return imageView; // 必须重写, 否则报异常
         }

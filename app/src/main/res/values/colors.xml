@@ -10,7 +10,7 @@
     <color name="colorVigilant">#FF5B42</color>
     <color name="colorTitle">#333333</color>
     <color name="colorImportantText">#666666</color>
-    <color name="colorSupportText">#999999</color>
+    <color name="colorSupportText">#FF999999</color>
     <color name="colorNotFiled">#CCCCCC</color>
     <color name="colorPartButton">#FFFFFFFF</color>
     <color name="colorButtonBackground">#FFFFFFFF</color>
