@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.clark.qmshootc.R;
+import com.clark.qmshootc.modules.main.views.pullrecyclerview.recyclerview.viewholder.MainRecyclerGridViewHolder;
 import com.clark.qmshootc.modules.main.views.pullrecyclerview.recyclerview.viewholder.MainRecyclerViewArtistHolder;
 import com.clark.qmshootc.modules.main.views.pullrecyclerview.recyclerview.viewholder.MainRecyclerViewBannerHolder;
 import com.clark.qmshootc.modules.main.views.pullrecyclerview.recyclerview.viewholder.MainRecyclerViewLikeHolder;
@@ -14,7 +15,7 @@ import com.clark.qmshootc.modules.main.views.pullrecyclerview.recyclerview.viewh
 public class MainRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     /********************模拟测试数据开始**********************************/
-    private int itemCount = 7;
+    private int itemCount = 4;
     /********************模拟测试数据结束**********************************/
 
     private final int BANNER_TYPE = 0;
@@ -35,8 +36,8 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
         switch (viewType) {
             case BANNER_TYPE:
                 mViewHolder = new MainRecyclerViewBannerHolder(
-                        mLayoutInflater.inflate(R.layout.layout_banner_home, parent, false),context);
-                ((MainRecyclerViewBannerHolder)mViewHolder).startBanner();
+                        mLayoutInflater.inflate(R.layout.layout_banner_home, parent, false), context);
+                ((MainRecyclerViewBannerHolder) mViewHolder).startBanner();
 
                 return mViewHolder;
             case ARTIST_TYPE:
@@ -48,10 +49,8 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                         mLayoutInflater.inflate(R.layout.layout_place_home, parent, false));
                 return mViewHolder;
             case LIKE_TYPE:
-                mViewHolder = new MainRecyclerViewPlaceHolder(
-                        mLayoutInflater.inflate(R.layout.layout_place_home, parent, false));
-//                mViewHolder = new MainRecyclerViewLikeHolder(
-//                        mLayoutInflater.inflate(R.layout.layout_like_home, parent, false));
+                mViewHolder = new MainRecyclerGridViewHolder(
+                        mLayoutInflater.inflate(R.layout.layout_like_home, parent, false));
                 return mViewHolder;
             default:
                 return null;

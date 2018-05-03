@@ -23,21 +23,17 @@
         app:layout_constraintBottom_toBottomOf="@id/id_iv_place"
         app:layout_constraintLeft_toLeftOf="@id/id_iv_place" />
 
-    <RelativeLayout
+    <TextView
         android:layout_width="@dimen/x68"
         android:layout_height="@dimen/y24"
         android:layout_marginLeft="@dimen/x23"
         android:background="@drawable/image_bottom_color"
+        android:gravity="center"
+        android:text="韦德拍摄"
+        android:textColor="@color/colorButtonBackground"
+        android:textSize="@dimen/ui_font_11_no"
         app:layout_constraintBottom_toBottomOf="@id/id_rl_artist_type"
         app:layout_constraintLeft_toLeftOf="@+id/id_rl_artist_type"
-        app:layout_constraintTop_toTopOf="@id/id_rl_artist_type">
+        app:layout_constraintTop_toTopOf="@id/id_rl_artist_type" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="韦德拍摄"
-            android:textColor="@color/colorButtonBackground"
-            android:textSize="@dimen/ui_font_11_no" />
-    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

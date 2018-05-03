@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.clark.qmshootc.modules.main.components.FullscreenActivity;
 import com.clark.qmshootc.R;
-import com.clark.qmshootc.modules.main.components.MainActivity;
 
 import java.util.ArrayList;
 
@@ -59,7 +59,7 @@ public class MainRecyclerViewBannerHolder extends RecyclerView.ViewHolder implem
                         e.printStackTrace();
                     }
                     // 往下跳一位
-                    ((MainActivity) context).runOnUiThread(new Runnable() {
+                    ((FullscreenActivity) context).runOnUiThread(new Runnable() {
 
                         @Override
                         public void run() {

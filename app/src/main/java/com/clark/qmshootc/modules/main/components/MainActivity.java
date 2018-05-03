@@ -19,7 +19,7 @@ import com.clark.qmshootc.modules.main.presenter.impl.MainPresenter;
 
 import butterknife.BindView;
 
-public class MainActivity extends BaseActivity implements IMainPresenter.View {
+public class MainActivity extends BaseActivity implements IMainPresenter.View, View.OnClickListener {
     @BindView(R.id.id_refresh_recycler_view_main)
     PullToRefreshRecyclerView idRefreshRecyclerViewMain;
     @BindView(R.id.id_iv_QR)
@@ -36,9 +36,20 @@ public class MainActivity extends BaseActivity implements IMainPresenter.View {
     View idViewDivide;
     @BindView(R.id.id_ll_title)
     ConstraintLayout idLlTitle;
+    @BindView(R.id.id_tv_home_page)
+    TextView idTvHomePage;
+    @BindView(R.id.id_tv_find_page)
+    TextView idTvFindPage;
+    @BindView(R.id.id_iv_publish_page)
+    ImageView idIvPublishPage;
+    @BindView(R.id.id_tv_message_page)
+    TextView idTvMessagePage;
+    @BindView(R.id.id_tv_my_page)
+    TextView idTvMyPage;
 
 
     private IMainPresenter mainPresenter;
+    private TextView currentSelectView = null;
 
 
     @Override
@@ -54,10 +65,52 @@ public class MainActivity extends BaseActivity implements IMainPresenter.View {
 //        设置界面全屏模式/显示状态栏
         FullScreenUtils.FullScreen(this);
 //        设置presenter
-        mainPresenter = new MainPresenter(this);
+        init();
 
     }
 
+    @SuppressLint("ResourceAsColor")
+    private void init() {
+        mainPresenter = new MainPresenter(this);
+        setNavigationBarStatus();
+
+    }
+
+    /**
+     * 根据ViewPager内容显示导航栏选中状态
+     */
+    private void setNavigationBarStatus() {
+        idTvHomePage.setOnClickListener(this);
+        idTvFindPage.setOnClickListener(this);
+        idIvPublishPage.setOnClickListener(this);
+        idTvMessagePage.setOnClickListener(this);
+        idTvMyPage.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        TextView newClickTextView = (TextView) v;
+//        未点击过按钮时
+        if (currentSelectView == null) {
+            newClickTextView.setEnabled(false);
+            newClickTextView.setTextSize(16);
+            newClickTextView.setSelected(true);
+            currentSelectView = newClickTextView;
+            return;
+
+        }
+//        设置新的按钮选中状态
+        newClickTextView.setEnabled(false);
+        newClickTextView.setTextSize(16);
+        newClickTextView.setSelected(true);
+//        取消旧的按钮选中状态
+        currentSelectView.setEnabled(true);
+        currentSelectView.setTextSize(14);
+        currentSelectView.setSelected(false);
+        currentSelectView = newClickTextView;
+
+    }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -82,17 +135,20 @@ public class MainActivity extends BaseActivity implements IMainPresenter.View {
         if (color == Color.WHITE) {
             idIvStatusBg.setBackground(getDrawable(R.drawable.shape_oval_black));
             idIvSearch.setImageResource(R.drawable.icon_sousuo2);
-            idTvSearch.setHintTextColor(R.color.colorSupportText);
-            idTvSearch.setHint("搜索关键词");
+            idTvSearch.setTextColor(R.color.colorSupportText);
+            idTvSearch.setText("搜索关键词");
             idIvQRCode.setImageResource(R.drawable.icon_saoyisao2);
             idViewDivide.setBackgroundColor(R.color.colorDivideLine);
+            FullScreenUtils.FullScreen(true, this);
         } else {
             idIvStatusBg.setBackground(getDrawable(R.drawable.shape_oval));
             idIvSearch.setImageResource(R.drawable.icon_sousuo);
-            idTvSearch.setHintTextColor(Color.WHITE);
-            idTvSearch.setHint("搜索关键词");
+            idTvSearch.setTextColor(Color.WHITE);
+            idTvSearch.setText("搜索关键词");
             idIvQRCode.setImageResource(R.drawable.icon_saoyisao);
             idViewDivide.setBackgroundColor(Color.TRANSPARENT);
+            FullScreenUtils.FullScreen(false, this);
+
         }
         FullScreenUtils.SetStatusBarColor(this, color);
         idLlTitle.setBackgroundColor(color);
