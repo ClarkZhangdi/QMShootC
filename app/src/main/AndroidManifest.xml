@@ -10,17 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".modules.main.components.MainActivity"></activity>
-        <activity android:name=".modules.guide.components.SetupGuideActivity" />
-        <activity android:name=".modules.login.components.LoginActivity" />
-        <activity android:name=".TestKJActivity" />
-        <activity android:name=".modules.main.components.FullscreenActivity">
-
+        <activity android:name=".modules.guide.components.SetupGuideActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".modules.login.components.LoginActivity" />
+        <activity android:name=".TestKJActivity" />
+        <activity android:name=".modules.main.components.MainHomeActivity"></activity>
     </application>
 
 </manifest>
